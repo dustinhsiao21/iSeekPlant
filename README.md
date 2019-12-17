@@ -7,7 +7,7 @@
 
 ### Summary
 1. Use the [Weatherbit](https://www.weatherbit.io/api/weather-forecast-16-day) API
-2. You could select a city in Australia and get the 5-day weather forecast. The detail of the cities is stored under `storage/app/city.json` at this stage. If there is a setting/config table in the database, the data should be stored into the database instead of the file. 
+2. Select a city in Australia and get the 5-day weather forecast. The detail of the cities is stored under `storage/app/city.json` temporary. If there is a table for setting/config in the database, the data should be stored into the database instead of a file. 
 
 3. Back-end:
   
@@ -31,7 +31,7 @@
     
 4. Front-end:
 
-    1. Use React Hook + Tailwind to build to front end layout.
+    1. Use React Hook + Tailwind to build the front end layout.
     2. Implement RWD.
     3. Import Momentjs, propTypes.
 ### Installation
