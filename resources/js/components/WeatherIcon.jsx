@@ -41,7 +41,7 @@ const weatherIconMapping = {
     '900': 'r01d',
 };
 
-const Icon = ({code}) => <img src={`./image/${weatherIconMapping[code]}.png`}/>
+const Icon = ({code}) => <img src={`./images/${weatherIconMapping[code]}.png`}/>
 
 Icon.propTypes = {
     code: PropTypes.number.isRequired

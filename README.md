@@ -1,5 +1,8 @@
 ## iSeekPlant code test
 
+![demo-frontend](./public/images/demo-frontend.png)
+![demo-console](./public/images/demo-backend.png)
+
 ### Summary
 1. Use the [Weatherbit](https://www.weatherbit.io/api/weather-forecast-16-day) API and [cities](https://www.weatherbit.io/api/meta) only in Australia and save as `city.json` in `storage/app/`. If there is a setting/config table in the application, the data should be saved in the database instead of the file. 
 
