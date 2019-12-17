@@ -7,13 +7,14 @@ use Carbon\Carbon;
 trait WeatherData
 {
     /**
-     * Get the next 7-day forecast
+     * Get the next 7-day forecast.
      *
      * @return array
      */
     public function FackForecastData(): array
     {
         $date = Carbon::now('UTC');
+
         return [
             'data' => [[
                 'moonrise_ts' => 1576505868,
@@ -315,7 +316,7 @@ trait WeatherData
                 'min_temp' => 10.4,
                 'clouds_mid' => 98,
                 'clouds_low' => 15,
-            ]
+            ],
         ],
             'city_name' => 'THIS_IS_TEST_CITY',
             'lon' => '138.59863',
