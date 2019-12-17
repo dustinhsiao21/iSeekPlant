@@ -9,7 +9,7 @@
         <title>Forecast</title>
     </head>
     <body>
-        <div class="min-h-screen max-h-full w-screen" style="background-image:url('./image/sky.jpg');background-size: cover;">
+        <div class="min-h-screen max-h-full w-screen" style="background-image:url('./images/sky.jpg');background-size: cover;">
             <div id="app"></div>
         </div>
         <script src="{{ mix('/js/app.js') }}"></script>
