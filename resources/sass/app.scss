@@ -1,0 +1,12 @@
+// tailwind
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.error-display {
+    @apply text-center bg-red-600 text-white text-xl;
+}
+
+
