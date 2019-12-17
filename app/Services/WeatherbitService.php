@@ -72,18 +72,18 @@ class WeatherbitService implements WeatherService
         $fiveDays = [];
         $date = Carbon::now('Australia/Sydney')->add(1, 'day');
         $count = 0;
-        foreach($response['data'] as $day){
-            if($count >= 5){
+        foreach ($response['data'] as $day) {
+            if ($count >= 5) {
                 break;
             }
 
-            if($day['datetime'] == $date->format('Y-m-d')){
+            if ($day['datetime'] == $date->format('Y-m-d')) {
                 $fiveDays[] = $day;
                 $date->add(1, 'day');
                 $count++;
             }
         }
-        
+
         $response['data'] = $fiveDays;
 
         return $response;
