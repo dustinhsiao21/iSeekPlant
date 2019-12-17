@@ -60,14 +60,31 @@ class WeatherbitService implements WeatherService
             throw new Exception("Can not find the city: $cityName");
         }
 
+        // I think there is a bug in the weatherbit api when sending request with 6 days.
+        // The return data does not always start on the same day.
+        // So I send the request with 7 days at this stage.
         $response = $this->action('GET', self::FORECAST_URL, [
             'city_id' => $cityId,
-            'days' => 6, // data would include today
+            'days' => 7,
             'key' => config('weather.weatherbit.key'),
         ]);
 
-        //remove today
-        array_shift($response['data']);
+        $fiveDays = [];
+        $date = Carbon::now('Australia/Sydney')->add(1, 'day');
+        $count = 0;
+        foreach($response['data'] as $day){
+            if($count >= 5){
+                break;
+            }
+
+            if($day['datetime'] == $date->format('Y-m-d')){
+                $fiveDays[] = $day;
+                $date->add(1, 'day');
+                $count++;
+            }
+        }
+        
+        $response['data'] = $fiveDays;
 
         return $response;
     }
@@ -97,7 +114,7 @@ class WeatherbitService implements WeatherService
      */
     protected function action(string $method, string $url, array $parameters): array
     {
-        $today = (Carbon::now())->format('Y-m-d');
+        $today = Carbon::now('UTC')->format('Y-m-d');
         $cacheName = implode('_', [$today, self::TYPE[$url], $parameters['city_id']]);
 
         if ('GET' == $method) {

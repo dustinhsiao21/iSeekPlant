@@ -2,10 +2,18 @@
 
 namespace Tests\FakeAPIData;
 
+use Carbon\Carbon;
+
 trait WeatherData
 {
-    public function FackForecastData()
+    /**
+     * Get the next 7-day forecast
+     *
+     * @return array
+     */
+    public function FackForecastData(): array
     {
+        $date = Carbon::now('UTC');
         return [
             'data' => [[
                 'moonrise_ts' => 1576505868,
@@ -44,7 +52,7 @@ trait WeatherData
                 'low_temp' => 23.6,
                 'max_temp' => 41.6,
                 'moonset_ts' => 1576545971,
-                'datetime' => '2019-12-17',
+                'datetime' => $date->add(1, 'day')->format('Y-m-d'),
                 'temp' => 29.4,
                 'min_temp' => 19.1,
                 'clouds_mid' => 6,
@@ -87,7 +95,7 @@ trait WeatherData
                 'low_temp' => 24.1,
                 'max_temp' => 41.1,
                 'moonset_ts' => 1576636412,
-                'datetime' => '2019-12-18',
+                'datetime' => $date->add(1, 'day')->format('Y-m-d'),
                 'temp' => 32.6,
                 'min_temp' => 23.4,
                 'clouds_mid' => 13,
@@ -130,7 +138,7 @@ trait WeatherData
                 'low_temp' => 28.5,
                 'max_temp' => 42.9,
                 'moonset_ts' => 1576726812,
-                'datetime' => '2019-12-19',
+                'datetime' => $date->add(1, 'day')->format('Y-m-d'),
                 'temp' => 34.1,
                 'min_temp' => 23.8,
                 'clouds_mid' => 20,
@@ -173,7 +181,7 @@ trait WeatherData
                 'low_temp' => 14,
                 'max_temp' => 42.1,
                 'moonset_ts' => 1576817197,
-                'datetime' => '2019-12-20',
+                'datetime' => $date->add(1, 'day')->format('Y-m-d'),
                 'temp' => 32.1,
                 'min_temp' => 16.7,
                 'clouds_mid' => 34,
@@ -216,7 +224,7 @@ trait WeatherData
                 'low_temp' => 11,
                 'max_temp' => 22.3,
                 'moonset_ts' => 1576907590,
-                'datetime' => '2019-12-21',
+                'datetime' => $date->add(1, 'day')->format('Y-m-d'),
                 'temp' => 16.5,
                 'min_temp' => 11.6,
                 'clouds_mid' => 69,
@@ -259,12 +267,56 @@ trait WeatherData
                 'low_temp' => 16.3,
                 'max_temp' => 26.6,
                 'moonset_ts' => 1576997995,
-                'datetime' => '2019-12-22',
+                'datetime' => $date->add(1, 'day')->format('Y-m-d'),
                 'temp' => 16.2,
                 'min_temp' => 10.4,
                 'clouds_mid' => 98,
                 'clouds_low' => 15,
-            ], ],
+            ],
+            [
+                'moonrise_ts' => 1576946131,
+                'wind_cdir' => 'ESE',
+                'rh' => 51,
+                'pres' => 977.056,
+                'high_temp' => 29.4,
+                'sunset_ts' => 1577009071,
+                'ozone' => 269.378,
+                'moon_phase' => 0.0997429,
+                'wind_gust_spd' => 10.5,
+                'snow_depth' => 0,
+                'clouds' => 99,
+                'ts' => 1576935060,
+                'sunrise_ts' => 1576956744,
+                'app_min_temp' => 11,
+                'wind_spd' => 3.32539,
+                'pop' => 20,
+                'wind_cdir_full' => 'east-southeast',
+                'slp' => 1017.39,
+                'valid_date' => '2019-12-22',
+                'app_max_temp' => 21.8,
+                'vis' => 23.7101,
+                'dewpt' => 5.2,
+                'snow' => 0,
+                'uv' => 3.60348,
+                'weather' => [
+                    'icon' => 'c04d',
+                    'code' => 804,
+                    'description' => 'Overcast clouds',
+                ],
+                'wind_dir' => 115,
+                'max_dhi' => null,
+                'clouds_hi' => 93,
+                'precip' => 0.1875,
+                'low_temp' => 16.3,
+                'max_temp' => 26.6,
+                'moonset_ts' => 1576997995,
+                'datetime' => $date->add(1, 'day')->format('Y-m-d'),
+                'temp' => 16.2,
+                'min_temp' => 10.4,
+                'clouds_mid' => 98,
+                'clouds_low' => 15,
+            ]
+        ],
             'city_name' => 'THIS_IS_TEST_CITY',
             'lon' => '138.59863',
             'timezone' => 'Australia/Adelaide',

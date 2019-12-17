@@ -6,7 +6,8 @@
 ![demo-console](./public/images/demo-backend.png)
 
 ### Summary
-1. Use the [Weatherbit](https://www.weatherbit.io/api/weather-forecast-16-day) API and [cities](https://www.weatherbit.io/api/meta) only in Australia and save as `city.json` in `storage/app/`. If there is a setting/config table in the application, the data should be saved in the database instead of the file. 
+1. Use the [Weatherbit](https://www.weatherbit.io/api/weather-forecast-16-day) API
+2. You could select a city in Australia and get the 5-day weather forecast. The detail of the cities is stored under `storage/app/city.json` at this stage. If there is a setting/config table in the database, the data should be stored into the database instead of the file. 
 
 3. Back-end:
   
@@ -28,7 +29,7 @@
     
     6. Store the icon/pic under the `public/image` directory at this stage. The better way to practice is using AWS services like S3/CloudFront.
     
-3. Front-end:
+4. Front-end:
 
     1. Use React Hook + Tailwind to build to front end layout.
     2. Implement RWD.
