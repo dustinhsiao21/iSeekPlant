@@ -1,5 +1,7 @@
 ## iSeekPlant code test
 
+## [![Build Status](https://travis-ci.com/dustinhsiao21/iSeekPlant.svg?branch=master)](https://travis-ci.com/dustinhsiao21/iSeekPlant)[![StyleCI](https://github.styleci.io/repos/228632338/shield?branch=master)](https://github.styleci.io/repos/228632338)
+
 ![demo-frontend](./public/images/demo-frontend.png)
 ![demo-console](./public/images/demo-backend.png)
 
@@ -7,7 +9,7 @@
 1. Use the [Weatherbit](https://www.weatherbit.io/api/weather-forecast-16-day) API and [cities](https://www.weatherbit.io/api/meta) only in Australia and save as `city.json` in `storage/app/`. If there is a setting/config table in the application, the data should be saved in the database instead of the file. 
 
 3. Back-end:
-    
+  
     1. You could use the command below to see the output report.
     
         ```
